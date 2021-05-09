@@ -1,9 +1,6 @@
 Model Training and Inference:
 -----------
 
-Step 0:
-`cd homework1`
-
 Training Examples:
 -----------
 Config0
