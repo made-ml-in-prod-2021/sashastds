@@ -1,0 +1,8 @@
+# @package _group_
+path_dataset: data/raw/heart_disease_uci.csv
+path_to_models: models/
+path_to_predictions: data/results/predictions.csv
+binary: false
+cutoff: 0.48
+path_to_report: data/results/
+target_name: target

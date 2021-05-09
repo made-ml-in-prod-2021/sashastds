@@ -1,0 +1,18 @@
+# @package _group_
+path_dataset: ml_project/data/raw/heart_disease_uci.csv
+path_to_models: ml_project/models/
+path_to_report: ml_project/models/report/
+splitting_params:
+  test_size: 0.3
+  random_state: 8
+feature_params:
+  target_name: target
+encoder_params:
+  encoder_type: onehot
+classifier_params:
+  classifier_type: rf
+  random_state: 8
+  n_jobs: 2
+  n_estimators: 10
+  max_depth: 6
+  min_samples_leaf: 20
