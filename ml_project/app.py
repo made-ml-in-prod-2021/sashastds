@@ -6,11 +6,9 @@ from src.inference import inference_pipeline
 
 
 @hydra.main(config_path="configs", config_name="config.yaml")
-def app(cfg: DictConfig) -> None:
+def app(cfg: DictConfig):
     """
-    runs pipeline.
-    :param cfg: config. By default use configs/train_config.yaml
-    :return: None
+    runs pipeline
     """
 
     cfg_train = cfg.get("train", None)
