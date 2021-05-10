@@ -16,8 +16,8 @@ setup(
         "tqdm==4.42.1",
         "Faker==8.1.2",
         "hydra-core==1.0.6",
-        "pylint=2.8.2",
-        "pytest==6.2.3",
+        "pylint=2.4.4",
+        "pytest==5.3.5",
     ],
     license="MIT",
 )

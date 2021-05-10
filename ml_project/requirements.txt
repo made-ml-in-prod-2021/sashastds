@@ -1,0 +1,13 @@
+#Python 3.7.6
+
+dataclasses==0.8
+marshmallow-dataclass==8.4.1
+pandas==1.0.1
+numpy==1.18.1
+lightgbm==3.2.0
+scikit-learn==0.22.1
+tqdm==4.42.1
+Faker==8.1.2
+hydra-core==1.0.6
+pylint=2.4.4
+pytest==5.3.5
