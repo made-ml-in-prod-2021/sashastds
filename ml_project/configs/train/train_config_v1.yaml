@@ -1,7 +1,7 @@
 # @package _group_
-path_dataset: ml_project/data/raw/heart_disease_uci.csv
-path_to_models: ml_project/models/
-path_to_report: ml_project/models/report/
+path_dataset: data/raw/heart_disease_uci.csv
+path_to_models: models/
+path_to_report: models/report/
 splitting_params:
   test_size: 0.3
   random_state: 8
