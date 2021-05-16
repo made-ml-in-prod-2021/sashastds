@@ -1,10 +1,10 @@
 from typing import List, Dict, Set, Tuple, Union, Iterable, Optional
 import warnings
+
 import pandas as pd
 from lightgbm import LGBMClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from hydra.utils import to_absolute_path
 
 from .utils import CustomException, load_object, save_object, setup_logging
 from .preprocessing import (

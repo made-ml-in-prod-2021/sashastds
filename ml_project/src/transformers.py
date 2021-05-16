@@ -17,7 +17,6 @@ class CategoricalEncoder:
     def __init__(
         self,
         cat_na_fill_value="(MISSING_OR_UNKNOWN_VALUE)",
-        map_unknown_to_na=True,
         recognize=False,
         verbose=False,
     ):
@@ -155,7 +154,6 @@ class HotEncoder:
     def __init__(
         self,
         force_nan_and_unknown_category=True,
-        map_unknown_to_na=True,
         cat_na_fill_value="(MISSING_OR_UNKNOWN_VALUE)",
         drop="first",
         recognize=False,
@@ -170,15 +168,9 @@ class HotEncoder:
         it would not be dropped either way and would not cause multicollinearity in linear models
         or carry any info as it's constantly 0,
         but it allows safely handling new unknown values or nans on inference
-
-        when 'map_unknown_to_na' is True, on transform new values goes to 'cat_na_fill_value' first
-        and then strategy depends on whether 'force_nan_and_unknown_category' was set to True
-        if not, it would raise an error
-
         """
 
         self.force_nan_and_unknown_category = force_nan_and_unknown_category
-        self.map_unknown_to_na = map_unknown_to_na
         self.cat_na_fill_value = cat_na_fill_value
         assert drop is None or drop in ["first", "last"]
         self.drop = drop
@@ -254,7 +246,7 @@ class HotEncoder:
                 else:
                     drop = [non_na_cols[-1]]
             X.drop(drop, axis=1, inplace=True)
-            X.columns = [cat_feature + "__" + re.sub("\s+", "_", f) for f in X.columns]
+            X.columns = [cat_feature + "__" + re.sub(r"\s+", "_", f) for f in X.columns]
             X_out.append(X)
         if X_out:
             return pd.concat(X_out, axis=1)

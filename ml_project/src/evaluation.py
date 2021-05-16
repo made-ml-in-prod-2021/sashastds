@@ -1,19 +1,18 @@
 import warnings
 import os
+from pprint import pprint
+
 import numpy as np
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from tqdm.notebook import tqdm
-from pprint import pprint
 from IPython.display import display
-
 from sklearn.metrics import roc_auc_score, classification_report, confusion_matrix
 from sklearn.utils import check_consistent_length, column_or_1d, assert_all_finite
 from sklearn.utils.extmath import stable_cumsum
 from matplotlib.collections import QuadMesh
 
-# from ml_project.src.utils import make_binary_prediction, save_metrics
 from .utils import make_binary_prediction, save_metrics
 
 
@@ -52,7 +51,7 @@ def calc_permutation_importances(
     np.random.seed(seed)
     warnings.filterwarnings("ignore", category=pd.core.common.SettingWithCopyWarning)
 
-    if columns is not None and len(columns) > 0 and type(columns) is not str:
+    if columns is not None and len(columns) > 0 and not isinstance(columns, str):
         col_iterator = columns
     else:
         col_iterator = X.columns
