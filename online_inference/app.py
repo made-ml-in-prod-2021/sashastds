@@ -66,7 +66,7 @@ def status() -> bool:
     return f"Model is{' not ' if model is None or transformers is None else ' '}ready"
 
 
-@app.api_route("/predict", response_model=List[ModelResponse], methods=["GET", "POST"])
+@app.api_route("/predict", response_model=List[ModelResponse], methods=["POST"])
 def predict(request: List[InputData]):
 
     for data in request:
