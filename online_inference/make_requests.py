@@ -7,10 +7,10 @@ from src.utils import setup_logging
 
 
 PATH_TO_DATA = "./data/sample.csv"
-LOCALHOST = '127.0.0.1'
+LOCALHOST = "127.0.0.1"
 PORT = 8000
-DOMAIN = f'{LOCALHOST}:{PORT}'
-ENDPOINT = 'predict'
+DOMAIN = f"{LOCALHOST}:{PORT}"
+ENDPOINT = "predict"
 
 if __name__ == "__main__":
     logger = setup_logging()
@@ -23,9 +23,6 @@ if __name__ == "__main__":
     logger.info(f"Request data samples:\n {request_data[::5]}")
 
     logger.info("Sending post request")
-    response = requests.post(
-        f"http://{DOMAIN}/{ENDPOINT}",
-        json.dumps(request_data)
-    )
+    response = requests.post(f"http://{DOMAIN}/{ENDPOINT}", json.dumps(request_data))
     logger.info(f"Response status code: {response.status_code}")
     logger.info(f"Response data samples:\n {response.json()[::5]}")

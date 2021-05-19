@@ -2,11 +2,11 @@ import os
 import sys
 from typing import List, Optional, Union, Dict
 
-from lightgbm import LGBMClassifier
-from sklearn.ensemble import RandomForestClassifier
 import pandas as pd
 import uvicorn
 from fastapi import FastAPI, HTTPException
+from lightgbm import LGBMClassifier
+from sklearn.ensemble import RandomForestClassifier
 
 from src.entities import InputData, ModelResponse
 from src.validate import check_data_valid, CAT_FEATURES, NUM_FEATURES
@@ -17,7 +17,7 @@ ClassificationModel = Union[LGBMClassifier, RandomForestClassifier]
 
 MODEL_CUTOFF = 0.48
 ID_COLUMN = "id"
-PATH_TO_MODEL = './models/'
+PATH_TO_MODEL = "./models/"
 
 model: Optional[ClassificationModel] = None
 transformers: Optional[Dict] = None
@@ -26,11 +26,15 @@ logger = setup_logging()
 app = FastAPI()
 
 
-def make_prediction(data: List[InputData], model: ClassificationModel, transformers: Dict) -> List[ModelResponse]:
+def make_prediction(
+    data: List[InputData], model: ClassificationModel, transformers: Dict
+) -> List[ModelResponse]:
 
-    data_for_model = pd.DataFrame(instance.__dict__ for instance in data)[CAT_FEATURES + NUM_FEATURES]
+    data_for_model = pd.DataFrame(instance.__dict__ for instance in data)[
+        CAT_FEATURES + NUM_FEATURES
+    ]
     ids = [instance.__getattribute__(ID_COLUMN) for instance in data]
-    
+
     logger.info(f"Creating features")
     X = extract_features(
         data_for_model, CAT_FEATURES, NUM_FEATURES, transformers, mode="transform"
