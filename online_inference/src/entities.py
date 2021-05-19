@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 
+
 class InputData(BaseModel):
     id: int
     age: int

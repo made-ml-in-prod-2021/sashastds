@@ -1,7 +1,8 @@
 import re
-import pandas as pd
 from collections import defaultdict
 from copy import deepcopy
+
+import pandas as pd
 from tqdm.notebook import tqdm
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 

@@ -1,9 +1,9 @@
-from typing import List, Dict, Set, Tuple, Union, Iterable, Optional
-import sys
-import logging
-import pickle
-import json
 import os
+import sys
+import json
+import pickle
+import logging
+from typing import List, Dict, Set, Tuple, Union, Iterable, Optional
 
 
 class CustomException(Exception):
