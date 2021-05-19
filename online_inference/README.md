@@ -58,8 +58,8 @@ python make_requests.py
 ## Запуск тестов
 
 ```bash
-pip install -q pytest
-pytest app_tests.py -v 
+pip install pytest
+pytest -v tests_app.py
 ```
 
 ## Checklist
@@ -71,7 +71,8 @@ pytest app_tests.py -v
 \+
 
 2) Напишите тест для /predict  (3 балла) (https://fastapi.tiangolo.com/tutorial/testing/, https://flask.palletsprojects.com/en/1.1.x/testing/)
-пока не в репозитории, надеюсь влить до софт дд
+\+
+
 3) Напишите скрипт, который будет делать запросы к вашему сервису -- 2 балла
 \+
 
@@ -92,7 +93,7 @@ https://fastapi.tiangolo.com/tutorial/handling-errors/ -- возращайте 4
 \+
 5) проведите самооценку -- 1 доп балл
 На текущий момент сделаны все пункты кроме теста predict, поэтому bottom up:
-1 + 1 + 2 + 3 + 4 + 3 + 2 + 0 + 3 = 19
+1 + 1 + 2 + 3 + 4 + 3 + 2 + 3 + 3 = 22
 \+ 
 6) создайте пулл-реквест и поставьте label -- hw2
 \+
